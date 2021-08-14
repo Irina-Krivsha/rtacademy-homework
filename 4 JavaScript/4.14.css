@@ -1,0 +1,13 @@
+li  {
+list-style-type: none;
+}
+#submit {
+    color:rgb(240, 240, 245);
+    background-color: blue;
+}
+form {
+    display: flex;
+}
+li  {
+    flex-direction: column; 
+}
