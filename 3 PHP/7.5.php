@@ -8,15 +8,11 @@
 
 <form action="" method="GET">
     <label for="cityname">Місто</label>
-    <input type="text" id="cityname" name="city">
-
+    <input type="text" id="cityname" name="city" value="<?php echo(htmlspecialchars($city = $_GET ['city']));?>">
     <button type="submit">Надіслати</button>
 </form>
 <?php
-$city = $_GET ['city'];
-echo($city)."\n\r";
-
-function cityname (string $city):string
+function cityname(string $city):string
     {
         $city=strip_tags($city);
         $city=trim ($city);
@@ -29,6 +25,5 @@ if ($city!=null)
     var_dump(cityname($city));
 }
 ?>
-
 </body>
 </html>
