@@ -4,17 +4,18 @@ $filepath = '../../../data/cities.csv';
 if( file_exists( $filepath ) )
 {    
     if( $handle = fopen( $filepath, 'r' ) )
-        {$city_million = [];
-            while(( $row = fgetcsv( $handle, 0, ',' ))!==false)
-            {               
-                if($row[4] >1000000)
-                    {                              
-                    $city_million [] = $row;
-                    }
-            }  
+    {
+        $city_million = [];
+        while(( $row = fgetcsv( $handle, 0, ',' ))!==false)
+        {               
+            if($row[4] >1000000)
+                {                              
+                $city_million [] = $row;
+                }
+        }  
         fclose( $handle );
         var_dump($city_million);
-        }      
+           
         
 
         $site = '../../../data/cities.html';
@@ -59,9 +60,9 @@ if( file_exists( $filepath ) )
 
                 header('Location: ../../../data/cities.html');
 
-                echo('OK');
+                echo('OK'.\n\r);
         
-                if(chmod('../../../data/cities.html', 0644)=true)
+                if(chmod('../../../data/cities.html', 0644)==true)
                 {
                     echo( 'Встановлено права доступу: 644' );
                 }
